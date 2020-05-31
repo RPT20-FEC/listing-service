@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Beds from '../client/src/components/Beds.jsx';
+import Dining from '../client/src/components/Dining.jsx';
 
-describe('Beds Component', () => {
+describe('Dining Component', () => {
+
   it('renders', () => {
-    const wrapper = shallow(<Beds />);
+    const wrapper = shallow(<Dining />);
     expect(wrapper.exists()).toBe(true);
   });
 });

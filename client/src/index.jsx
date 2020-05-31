@@ -18,4 +18,3 @@ ReactDom.render(<Header id={ getIdFromUrl() } />, document.getElementById('heade
 
 ReactDom.render(<ListingDetail id={ getIdFromUrl() } />, document.getElementById('listing-details'));
 
-// ReactDom.render(<Photos />, document.getElementById('listing-photos'));

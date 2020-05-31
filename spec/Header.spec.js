@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Summary from '../client/src/components/Summary.jsx';
+import Header from '../client/src/components/Header.jsx';
 
-describe('Summary Component', () => {
+describe('Header Component', () => {
+
   it('renders', () => {
-    const wrapper = shallow(<Summary />);
+    const wrapper = shallow(<Header/>);
     expect(wrapper.exists()).toBe(true);
   });
 });

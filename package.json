@@ -1,6 +1,6 @@
 {
   "name": "property-service",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "",
   "private": true,
   "author": "Justin Anderson",
@@ -13,9 +13,9 @@
     "build:watch": "webpack --mode=development --watch",
     "dev:start": "nodemon --inspect server/start.js",
     "start": "node server/start.js",
-    "db:setup": "node database/seed.js",
+    "db:seedListings": "node database/seed.js",
     "db:seedFeatures": "node database/feature-data.js",
-    "test": "node_modules/jest/bin/jest.js spec --runInBand",
+    "test": "jest",
     "clean": "rm -rf client/dist",
     "clean:build": "npm run clean && npm run build"
   },
@@ -39,8 +39,10 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "html-webpack-plugin": "^4.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^25.3.0",
     "jest-cli": "^25.3.0",
+    "jest-css-modules-transform": "^4.0.0",
     "jest-enzyme": "^7.1.2",
     "lorem-ipsum": "^2.0.3",
     "morgan": "^1.10.0",
@@ -49,7 +51,6 @@
     "style-loader": "^1.2.1",
     "supertest": "^4.0.2",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-cli": "^3.3.11"
   }
 }

@@ -13,7 +13,13 @@ describe('Server Tests', () => {
     const response = await request.get('/test');
 
     expect(response.status).toBe(200);
-    expect(response.body.message).toBe('pass!');
+    // expect(response.body.message).toBe('pass!');
+    done();
+  });
+  it('Sends file in response to GET "/"', async (done) => {
+    const response = await request.get('/');
+
+    expect(response.status).toBe(200);
     done();
   });
   it('Gets the listings endpoint', async (done) => {
