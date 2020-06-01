@@ -17,21 +17,58 @@ describe('Header Component', () => {
   it('renders', () => {
     expect(wrapper.exists()).toBe(true);
   });
+
   it('correctly displays a headline from state', () => {
     expect(wrapper.find('h1').text()).toEqual(`${headline}`);
   });
-  // TODO: Implement all below, plus:
+
+  it('displays Superhost info when state includes superHost', () => {
+    expect(wrapper.find('.test-file-stub')).toBeTruthy();
+
+    expect(wrapper.containsMatchingElement(<div>Superhost</div>)).toBeTruthy();
+  });
+
+  it('does not display Superhost info when state does not include superHost', () => {
+    wrapper.setState({superHost: false});
+
+    expect(wrapper.find('.test-file-stub')).toEqual({});
+
+    expect(wrapper.containsMatchingElement(<div>Superhost</div>)).toBeFalsy();
+
+    wrapper.update();
+  });
+
+  it('displays star icon and number of stars and reviews from state', () => {
+    expect(wrapper.find('.test-file-stub')).toBeTruthy();
+    expect(wrapper.containsMatchingElement(
+      <div>
+        {stars} ({reviews})
+      </div>
+    )).toBeTruthy();
+  });
+
+  it('displays the location from state', () => {
+    expect(wrapper.containsMatchingElement(
+      <div>{location}</div>
+    )).toBeTruthy();
+  });
+
+  it('displays a save button', () => {
+    expect(wrapper.find('div.saveButton')).toBeTruthy();
+    expect(wrapper.find('div.saveIcon')).toBeTruthy();
+    expect(wrapper.containsMatchingElement(<div><img/>Save</div>)).toBeTruthy();
+  });
+
+  it('displays a share button', () => {
+    expect(wrapper.find('div.shareButton')).toBeTruthy();
+    expect(wrapper.find('div.shareIcon')).toBeTruthy();
+    expect(wrapper.containsMatchingElement(<div><img/>Share</div>)).toBeTruthy();
+  });
+
+  // TODO: Implement all above ^^ , plus:
   // Learn how/why to mock png file for tests
   // Learn how to test async functions within class components
 
   // it 'includes' a thing the user sees
   // it includes the save and share icons and text
-  // it includes the star icon
-
-  // it displays this thing when given another thing
-  // it includes headline x when this.state.headline is set to x
-  // it includes the superhost badge when this.state.superHost
-  // it shows # of stars when this.state.stars is set to #
-  // it shows # of reviews when this.state.reviews is set to #
-  // it includes location x when this.state.location is set to x
 });

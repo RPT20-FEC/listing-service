@@ -23,23 +23,24 @@ module.exports = {
     '^.+\\.(js|jsx)?$': 'babel-jest'
   },
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.jsx'],
-  coveragePathIgnorePatterns: [
-    '/client/src/index.jsx',
-    '/node_modules/',
-    '/client/src/styles/'
+  coverageProvider: 'babel',
+  collectCoverageFrom: [
+    '**/*.{js,jsx',
+    '!**/node_modules/',
+    '!**/index.jsx',
+    '!**/styles/'
   ],
-  coverageThreshold: {
-    'global': {
-      'branches': 100,
-      'functions': 100,
-      'lines': 100,
-      'statements': 100
-    }
-  },
+  // coverageThreshold: {
+  //   'global': {
+  //     'branches': 100,
+  //     'functions': 100,
+  //     'lines': 100,
+  //     'statements': 100
+  //   }
+  // },
   coverageDirectory: 'coverage',
   coverageReporters: [
-    'text',
+    'text-summary',
     'html'
   ],
   // preset: 'babel-preset-jest',
